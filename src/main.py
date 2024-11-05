@@ -1,95 +1,63 @@
-class ChainSaw():
-    # приватні
-    __name = None
-    __power = None
-    __rotation_speed = None
-
-    # публічні
-    weight = 15
-    category = "Instrument"
-
-    def __init__(self, name="DniproM", power=150, rotation_speed=250, weight=15, category="Tool"):
+class ChainSaw:
+    def __init__(self, name="DniproM", power=150, rotation_speed=250, category="Tool"):
         self.__name = name
         self.__power = power
         self.__rotation_speed = rotation_speed
-        self.weight = weight
-        self.category = category
+        self.category = category  
 
-    # геттери
+    # getters / setters
 
-    def get_name(self):
+    @property
+    def name(self):
         return self.__name
 
-    def get_power(self):
-        return self.__power
-
-    def get_rotation_speed(self):
-        return self.__rotation_speed
-
-    def get_weight(self):
-        return self.weight
-
-    def get_category(self):
-        return self.category
-
-    # cеттери
-
-    def set_name(self, name):
+    @name.setter
+    def name(self, name):
         self.__name = name
 
-    def set_power(self, power):
+    @property
+    def power(self):
+        return self.__power
+    
+    @power.setter
+    def power(self, power):
         self.__power = power
 
-    def set_rotation_speed(self, rotation_speed):
+    @property
+    def rotation_speed(self):
+        return self.__rotation_speed
+    
+    @rotation_speed.setter
+    def rotation_speed(self, rotation_speed):
         self.__rotation_speed = rotation_speed
 
-    def set_weight(self, weight):
-        self.weight = weight
-
-    def set_category(self, category):
-        self.category = category
-
-    # перевизн методи
+    # redefined methods
 
     def __str__(self):
-        return f"chainsaw: {self.__name}, power: {self.__power} W, rotation speed: {self.__rotation_speed} rotations per second"
+        return f"chainsaw: {self.__name}, power: {self.__power} W, rotation speed: {self.__rotation_speed} rotations per second, category: {self.category}"
 
     def __repr__(self):
-        return f"chainsaw (name='{self.__name}', power={self.__power}, rotation_speed={self.__rotation_speed})"
+        return f"chainsaw (name='{self.__name}', power={self.__power}, rotation_speed={self.__rotation_speed}, category={self.category})"
 
-    # дестркктори
+    # destructor
 
     def __del__(self):
         print(f"Delete element: {self.__name}")
 
 
-
 def main():
-    chainsaw_1 = ChainSaw()
-    chainsaw_2 = ChainSaw("Stihl", 300, 450, 25, "Forest Tool")
-    chainsaw_3 = ChainSaw("Chainsaw2", 100, 150, 12, "Home Tool")
+    ch1 = ChainSaw()
+    ch2 = ChainSaw('Sctill', 122, 345, "Forest Tool")
+    ch3 = ChainSaw('Husqvarna', 200, 300, "Home Tool")
 
-    # виведення за допомогою __str__
-    print(chainsaw_1)
-    print(chainsaw_2)
-    print(chainsaw_3)
+    print(ch1)
+    print(ch2)
+    print(ch3)
 
+    print(repr(ch1))
+    print(repr(ch2))
+    print(repr(ch3))
 
-    # виведення за допомогою __repr__
-    print(repr(chainsaw_1))
-    print(repr(chainsaw_2))
-    print(repr(chainsaw_3))
-
-main()
-
-
-    
-    
-    
-
-
-
-
-
-
+if __name__ == "__main__":
+    main()
 
