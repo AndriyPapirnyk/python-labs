@@ -40,7 +40,6 @@ class ChainSaw:
         return f"chainsaw (name='{self.__name}', power={self.__power}, rotation_speed={self.__rotation_speed}, category={self.category})"
 
     # destructor
-
     def __del__(self):
         print(f"Delete element: {self.__name}")
 
