@@ -3,7 +3,7 @@ class ChainSaw:
         self.__name = name
         self.__power = power
         self.__rotation_speed = rotation_speed
-        self.category = category  
+        self._category = category  
 
     # getters / setters
 
@@ -31,15 +31,24 @@ class ChainSaw:
     def rotation_speed(self, rotation_speed):
         self.__rotation_speed = rotation_speed
 
+    @property
+    def category(self):
+        return self._category
+
+    @category.setter
+    def category(self, category):
+        self._category = category
+
     # redefined methods
 
     def __str__(self):
-        return f"chainsaw: {self.__name}, power: {self.__power} W, rotation speed: {self.__rotation_speed} rotations per second, category: {self.category}"
+        return f"chainsaw: {self.__name}, power: {self.__power} W, rotation speed: {self.__rotation_speed} rotations per second, category: {self._category}"
 
     def __repr__(self):
-        return f"chainsaw (name='{self.__name}', power={self.__power}, rotation_speed={self.__rotation_speed}, category={self.category})"
+        return f"chainsaw (name='{self.__name}', power={self.__power}, rotation_speed={self.__rotation_speed}, category={self._category})"
 
     # destructor
+
     def __del__(self):
         print(f"Delete element: {self.__name}")
 
