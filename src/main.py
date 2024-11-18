@@ -42,10 +42,13 @@ class ChainSaw:
     # redefined methods
 
     def __str__(self):
-        return f"chainsaw: {self.__name}, power: {self.__power} W, rotation speed: {self.__rotation_speed} rotations per second, category: {self._category}"
+        return f"chainsaw: {self.__name}, power: {self.__power} W, " \
+               f"rotation speed: {self.__rotation_speed} rotations per second, " \
+               f"category: {self._category}"
 
     def __repr__(self):
-        return f"chainsaw (name='{self.__name}', power={self.__power}, rotation_speed={self.__rotation_speed}, category={self._category})"
+        return f"chainsaw (name='{self.__name}', power={self.__power}, " \
+               f"rotation_speed={self.__rotation_speed}, category={self._category})"
 
     # destructor
 
@@ -54,17 +57,17 @@ class ChainSaw:
 
 
 def main():
-    ch1 = ChainSaw()
-    ch2 = ChainSaw('Sctill', 122, 345, "Forest Tool")
-    ch3 = ChainSaw('Husqvarna', 200, 300, "Home Tool")
+    default_chain_saw = ChainSaw()
+    sctill_chain_saw = ChainSaw('Sctill', 122, 345, "Forest Tool")
+    husqvarna_chain_saw = ChainSaw('Husqvarna', 200, 300, "Home Tool")
 
-    print(ch1)
-    print(ch2)
-    print(ch3)
+    print(default_chain_saw)
+    print(sctill_chain_saw)
+    print(husqvarna_chain_saw)
 
-    print(repr(ch1))
-    print(repr(ch2))
-    print(repr(ch3))
+    print(repr(default_chain_saw))
+    print(repr(sctill_chain_saw))
+    print(repr(husqvarna_chain_saw))
 
 if __name__ == "__main__":
     main()
